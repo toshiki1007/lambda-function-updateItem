@@ -10,4 +10,4 @@ phases:
       - >-
         aws cloudformation deploy --template-file packaged-template.yaml
         --stack-name msa-stack-updateItem --capabilities CAPABILITY_IAM
-        --no-fail-on-empty-changeset
+        --no-fail-on-empty-changeset --debug
