@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Create Lambda function by using AWS SAM.
+Resources:
+  UpdateItemFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: functions/lambda_function.lambda_handler
+      Runtime: python3.6
+      Role: 'arn:aws:iam::636729331386:role/lambda_role_for_update_Item_on_DynamoDB'
+      Timeout: 15
+      Layers:
+        - 'arn:aws:lambda:us-west-2:636729331386:layer:xray_sdk:1'
+        - 'arn:aws:lambda:us-west-2:636729331386:layer:python_requests:1'
+      Description: ''
+      MemorySize: ''
