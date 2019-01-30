@@ -123,7 +123,7 @@ def lambda_handler(event, context):
         'userId': buyer_id,
         'tradingUserId': update_record['sellerId'],
         'price': str(update_record['price']),
-        'typeFlg': '0'
+        'typeFlg': '1'
     }
     
     update_balance_input_json = json.dumps(update_balance_input).encode("utf-8")
