@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create Lambda function by using AWS SAM.
+Resources:
+  UpdateItemFunction:
+    Properties:
+      CodeUri: s3://msa-sam-repository/8d7364edc20fab1d93a6203f99fc4d79
+      Environment:
+        Variables:
+          UPDATE_BALANCE_URL: https://8pzwhzq42m.execute-api.us-west-2.amazonaws.com/dev
+      Handler: functions/lambda_function.lambda_handler
+      Layers:
+      - arn:aws:lambda:us-west-2:636729331386:layer:xray_sdk:1
+      - arn:aws:lambda:us-west-2:636729331386:layer:python_requests:1
+      Role: arn:aws:iam::636729331386:role/lambda_role_for_update_Item_on_DynamoDB
+      Runtime: python3.6
+      Timeout: 15
+      Tracing: Active
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31

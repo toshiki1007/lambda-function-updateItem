@@ -12,9 +12,7 @@ Resources:
       Layers:
         - 'arn:aws:lambda:us-west-2:636729331386:layer:xray_sdk:1'
         - 'arn:aws:lambda:us-west-2:636729331386:layer:python_requests:1'
-      TracingConfig:
-        Mode:
-          Active
+      Tracing: Active
       Environment:
         Variables:
           UPDATE_BALANCE_URL: 'https://8pzwhzq42m.execute-api.us-west-2.amazonaws.com/dev'
